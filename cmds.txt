@@ -1,0 +1,9 @@
+pip install mysql-connector-python
+pip install flask
+python --version
+
+git init
+git config --global user.name "Linco"
+git config --global user.email "llincolnolim@gmail.com"
+git add .
+git push "https://github.com/linco-777/cavalo-de-relogio-do-batman.git"
