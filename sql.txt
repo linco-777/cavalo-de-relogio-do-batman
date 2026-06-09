@@ -35,8 +35,10 @@ CREATE TABLE tblmove (
 
 SELECT email, permissao FROM usuarios;
 
+INSERT INTO usuarios (email, senha_hash, permissao)
+VALUES ('admin@senai.com', '...', 'admin');
 
-SELECT*FROM login;
+SELECT*FROM usuarios;
 SELECT*FROM tbladd;
 SELECT*FROM tblvizu;
 SELECT*FROM tblmove

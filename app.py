@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 import bcrypt
 import mysql.connector
-
 app = Flask(__name__)
 app.secret_key = "chave_secreta"
 
@@ -25,7 +24,6 @@ def login():
             resultado = cursor.fetchone()
             cursor.close()
             conexao.close()
-
             if resultado and bcrypt.checkpw(senha.encode("utf-8"), resultado[0].encode("utf-8")):
                 session["permissao"] = resultado[1]
                 session["email"] = email
@@ -34,13 +32,12 @@ def login():
                 flash("Email ou senha incorretos.", "danger")
         except Exception as e:
             flash(f"Erro ao conectar: {e}", "danger")
-
     return render_template("login.html")
 
 @app.route("/home")
 def home():
     return render_template("home.html")
-
+    
 @app.route("/tblmove")
 def tblmove():
     return render_template("tblmove.html")
@@ -72,7 +69,13 @@ def cadastro():
 
 @app.route("/tblvizu")
 def tblvizu():
-    return render_template("tblvizu.html")
+    conexao = conectar_bd()
+    cursor = conexao.cursor()
+    cursor.execute("SELECT ID, NOME, QNTD, ESTOQUE_MINIMO, DESCRICAO, PRECO, FOTO, CATEGORIA FROM tblvizu")
+    itens = cursor.fetchall()
+    cursor.close()
+    conexao.close()
+    return render_template("tblvizu.html", itens=itens)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
