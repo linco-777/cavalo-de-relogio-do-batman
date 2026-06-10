@@ -1,0 +1,60 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+.navbar {
+    background-color: #192A6B !important;
+}
+.navbar .nav-link {
+    color: #ffffff !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #FF9500 !important;
+    font-weight: bold;
+}
+.container {
+    margin-top: 50px;
+    max-width: 500px;
+}
+.card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(25, 42, 107, 0.15);
+    border-radius: 8px;
+}
+.card-header {
+    background-color: #192A6B;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 20px;
+}
+.card-header h4 {
+    color: #ffffff;
+    margin: 0;
+    font-weight: bold;
+}
+.card-body {
+    padding: 30px;
+}
+.form-label {
+    color: #192A6B;
+    font-weight: 500;
+}
+.form-control:focus,
+.form-select:focus {
+    border-color: #192A6B;
+    box-shadow: 0 0 0 0.2rem rgba(25, 42, 107, 0.25);
+}
+.btn-cadastrar {
+    background-color: #FF9500;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+.btn-cadastrar:hover {
+    background-color: #FF6800;
+}
